@@ -16,7 +16,7 @@ promptinit
 prompt walters
 
 # Custom prompt
-PS1='%F{cyan}%n@%M%F{red}:%F{magenta}%d%f '
+PS1='%F{cyan}%n@%M%F{red}:%F{magenta}%~%f '
 RPS1='%F{red}%*%f'
 
 # Coloring ls command
@@ -26,3 +26,7 @@ export LS_COLORS
 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias ls='ls --color=auto'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
