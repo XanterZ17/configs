@@ -6,9 +6,9 @@ PASSWORD=dumbass
 
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc
-sed -i '177s/.//' /etc/locale.gen
-sed -i '403s/.//' /etc/locale.gen
-sed -i '160s/.//' /etc/locale.gen
+sed -i '177s/#//' /etc/locale.gen
+sed -i '403s/#//' /etc/locale.gen
+sed -i '160s/#//' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo $HOSTNAME >> /etc/hostname
@@ -16,7 +16,7 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1	localhost" >> /etc/hosts
 echo root:$PASSWORD | chpasswd
 
-pacman -S --noconfirm grub efibootmgr networkmanager base-devel openssh os-prober man zsh
+pacman -S --noconfirm grub efibootmgr networkmanager base-devel openssh os-prober man zsh ntfs-3g
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
