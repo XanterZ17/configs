@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S gnome gdm
+pacman -S --noconfirm  gnome gdm
 
 systemctl enable gdm.service
 

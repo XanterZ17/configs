@@ -16,7 +16,7 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1	localhost" >> /etc/hosts
 echo root:$PASSWORD | chpasswd
 
-pacman -S --noconfirm grub efibootmgr networkmanager base-devel openssh os-prober man zsh ntfs-3g
+pacman -S --noconfirm linux-headers grub efibootmgr networkmanager base-devel openssh os-prober man zsh ntfs-3g 
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
